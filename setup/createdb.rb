@@ -4,7 +4,7 @@ require 'sequel'
 unless Dir.exist?('db')
 FileUtils.mkdir 'db'
 end
-DB = Sequel.connect('sqlite://db/blog.db')
+DB = Sequel.connect('sqlite://db/post.db')
 
 # create an items table
 begin
