@@ -1,0 +1,52 @@
+html {
+  position: relative;
+  min-height: 100%; }
+
+body {
+  background-color: #9b111e; }
+
+.textbox {
+  background-color: #f1f1f1;
+  padding: 50px;
+  margin: 0 0 0px;
+  padding: 35px;
+  border: 1px solid black; }
+
+.h1title {
+  box-sizing: content-box;
+  font: normal 68px/1 "Courier New", monospace;
+  text-align: center;
+  text-overflow: ellipsis;
+  letter-spacing: 0px;
+  white-space: pre-line;
+  padding: 1px;
+  margin: 0px;
+  border: 1px solid black;
+  background-color: #740000; }
+
+.h2title {
+  text-align: center; }
+
+footer {
+  background-color: #740000;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+  height: 50px;
+  width: 100%; }
+
+input[type=submit] {
+  background-color: #740000;
+  border: none;
+  color: white;
+  padding: 8px 24px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer; }
+
+.searchbar {
+  text-align: center; }
+
+/*# sourceMappingURL=style.css.map */
