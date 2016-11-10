@@ -343,7 +343,7 @@ result when supplied with the same block:</p>
 
     </div>")
 
-posts.insert( :id => 3, :title => 'BASICOBJECT' :body => "<div id='description' class='description'>
+posts.insert( :id => 3, :title => 'BASICOBJECT', :body => "<div id='description' class='description'>
       
 <p><a href='BasicObject.html'>BasicObject</a> is the parent class of all
 classes in Ruby.  It's an explicit blank class.</p>
