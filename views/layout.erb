@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>untitled</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.28" />
+	<%= @css %>
+</head>
+
+<body>
+	<h1 class="h1title">Ruby Standard Libaray Search</h1>
+	<div class="textbox">
+	<div class="searchbar">
+	  <form action= search method="get">
+
+        <label for="Search"></label>
+   
+        <input class="text" name="search" id="search" type="text">
+        <br>
+        <input type="submit" value="Search">
+
+     </form>
+     </div>
+      <h2 class="h2title"><%= @title %></h2>
+      <%= @front_body %>
+      </div>
+      <footer> <br> &copy; Derek Viera</footer>
+</body>
+
+</html>
