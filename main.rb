@@ -36,7 +36,14 @@ Cuba.define do
 	  @front_body = where_post.fetch(:body)
       res.write view ("layout")
     end
-  
-  end
+  on "search", param("search") do  |query|
+	  @css = "<link rel='stylesheet' type='text/css' href='/css/style.css'>"
+	  where_post = posts.where[:title => "#{query}".upcase]
+	  @title = where_post.fetch(:title)
+	  @front_body = where_post.fetch(:body)
+      res.write partial ("layout")
+    end
+    end
 end
+
 
