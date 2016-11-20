@@ -406,3 +406,413 @@ const_missing can be used to delegate constant lookup to
 </pre>
 
     </div>")
+posts.insert( :id => 4, :title => 'BIGNUM', :body => "
+<p><a href='Bignum.html'>Bignum</a> objects hold integers outside the range of
+<a href='Fixnum.html'>Fixnum</a>. <a href='Bignum.html'>Bignum</a> objects
+are created automatically when integer calculations would otherwise
+overflow a <a href='Fixnum.html'>Fixnum</a>. When a calculation involving
+<a href='Bignum.html'>Bignum</a> objects returns a result that will fit in
+a <a href='Fixnum.html'>Fixnum</a>, the result is automatically converted.</p>
+
+<p>For the purposes of the bitwise operations and <code>[]</code>, a <a
+href='Bignum.html'>Bignum</a> is treated as if it were an infinite-length
+bitstring with 2’s complement representation.</p>
+
+<p>While <a href='Fixnum.html'>Fixnum</a> values are immediate, <a
+href='Bignum.html'>Bignum</a> objects are not—assignment and parameter
+passing work with references to objects, not the objects themselves.</p>
+    
+     <div class='method-heading'>
+            <span class='method-callseq'>big % other         &rarr; Numeric</span>
+            
+          </div>
+
+<div class='method-heading'>
+            <span class='method-callseq'>big & numeric   &rarr;  integer</span>
+            
+          </div>       
+          
+              <div class='method-heading'>
+            <span class='method-callseq'>big * other  &rarr; Numeric</span>
+            
+          </div>
+          
+           <div class='method-heading'>
+            <span class='method-callseq'>big ** exponent   &rarr; numeric</span>
+            
+          </div>
+          
+          <p>Raises <em>big</em> to the <em>exponent</em> power (which may be an
+integer, float, or anything that will coerce to a number). The result may
+be a <a href='Fixnum.html'>Fixnum</a>, <a href='Bignum.html'>Bignum</a>, or
+<a href='Float.html'>Float</a></p>
+
+<pre class='ruby'><span class='ruby-value'>123456789</span> <span class='ruby-operator'>**</span> <span class='ruby-value'>2</span>      <span class='ruby-comment'>#=&gt; 15241578750190521</span>
+<span class='ruby-value'>123456789</span> <span class='ruby-operator'>**</span> <span class='ruby-value'>1.2</span>    <span class='ruby-comment'>#=&gt; 5126464716.09932</span>
+<span class='ruby-value'>123456789</span> <span class='ruby-operator'>**</span> <span class='ruby-value'>-2</span>     <span class='ruby-comment'>#=&gt; 6.5610001194102e-17</span>
+</pre>
+
+<div class='method-heading'>
+            <span class='method-callseq'>big + other  &rarr; Numeric</span>
+            
+          </div>
+          
+          <p>Adds big and other, returning the result.</p>
+          
+             <div class='method-heading'>
+            <span class='method-callseq'>big - other  &rarr; Numeric</span>
+            
+          </div>
+          
+          <p>Subtracts other from big, returning the result.</p>
+          
+           <div class='method-heading'>
+            <span class='method-callseq'>-big   &rarr;  integer</span>
+            
+          </div>
+          
+           <p>Unary minus (returns an integer whose value is 0-big)</p>
+           
+           <div class='method-heading'>
+            <span class='method-callseq'>big / other     &rarr; Numeric</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Performs division: the class of the resulting object depends on the class
+of <code>numeric</code> and on the magnitude of the result.</p>
+
+ 
+          <div class='method-heading'>
+            <span class='method-callseq'>big < real  &rarr;  true or false</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns <code>true</code> if the value of <code>big</code> is less than
+that of <code>real</code>.</p>
+
+  <div class='method-heading'>
+            <span class='method-callseq'>big << numeric   &rarr;  integer</span>
+
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Shifts big left <em>numeric</em> positions (right if <em>numeric</em> is
+negative).</p>
+
+<div class='method-heading'>
+            <span class='method-callseq'>big <= real  &rarr;  true or false</span>
+            </div>
+            
+            <p>Returns <code>true</code> if the value of <code>big</code> is less than or
+equal to that of <code>real</code>.</p>
+
+ <div class='method-heading'>
+            <span class='method-callseq'>big <=> numeric   &rarr; -1, 0, +1 or nil</span>
+            </div>
+            
+            <p>Comparison—Returns -1, 0, or +1 depending on whether <code>big</code> is
+less than, equal to, or greater than <code>numeric</code>. This is the
+basis for the tests in <a href='Comparable.html'>Comparable</a>.</p>
+
+<p><code>nil</code> is returned if the two values are incomparable.</p>
+
+<div class='method-heading'>
+            <span class='method-callseq'>big == obj  &rarr; true or false</span>
+            </div>
+
+<p>Returns <code>true</code> only if <em>obj</em> has the same value as
+<em>big</em>. Contrast this with <code>Bignum#eql?</code>, which requires
+<em>obj</em> to be a <code>Bignum</code>.</p>
+
+<pre class='ruby'><span class='ruby-value'>68719476736</span> <span class='ruby-operator'>==</span> <span class='ruby-value'>68719476736.0</span>   <span class='ruby-comment'>#=&gt; true</span>
+</pre>
+
+ <div class='method-heading'>
+            <span class='method-callseq'>big > real  &rarr;  true or false</span>
+            </div>
+            
+            <p>Returns <code>true</code> if the value of <code>big</code> is greater than
+that of <code>real</code>.</p>
+
+<div class='method-heading'>
+            <span class='method-callseq'>big >= real  &rarr;  true or false</span>
+            </div>
+            
+              <p>Returns <code>true</code> if the value of <code>big</code> is greater than
+or equal to that of <code>real</code>.</p>
+
+   
+          <div class='method-heading'>
+            <span class='method-callseq'>big >> numeric   &rarr;  integer</span>
+            
+            </div>
+            
+            <p>Shifts big right <em>numeric</em> positions (left if <em>numeric</em> is
+negative).</p>
+
+ <div class='method-heading'>
+            <span class='method-callseq'>big[n] &rarr; 0, 1</span>
+            </div>
+            
+            <p>Bit Reference—Returns the <em>n</em>th bit in the (assumed) binary
+representation of <em>big</em>, where <em><a href='0'>big</a></em> is the
+least significant bit.</p>
+
+
+
+<pre class='ruby'><span class='ruby-identifier'>a</span> = <span class='ruby-value'>9</span><span class='ruby-operator'>**</span><span class='ruby-value'>15</span>
+<span class='ruby-value'>50</span>.<span class='ruby-identifier'>downto</span>(<span class='ruby-value'>0</span>) <span class='ruby-keyword'>do</span> <span class='ruby-operator'>|</span><span class='ruby-identifier'>n</span><span class='ruby-operator'>|</span>
+  <span class='ruby-identifier'>print</span> <span class='ruby-identifier'>a</span>[<span class='ruby-identifier'>n</span>]
+<span class='ruby-keyword'>end</span>
+</pre>
+
+<p><em>produces:</em></p>
+
+<pre class='ruby'><span class='ruby-value'>000101110110100000111000011110010100111100010111001</span>
+</pre>
+
+<div class='method-heading'>
+            <span class='method-callseq'>big ^ numeric   &rarr;  integer</span>
+            </div>
+            
+            <p>Performs bitwise +exclusive or+ between <em>big</em> and <em>numeric</em>.</p>
+            
+            <div class='method-heading'>
+            <span class='method-callseq'>abs &rarr; aBignum</span>
+            </div>
+            
+            <p>Returns the absolute value of <em>big</em>.</p>
+
+<pre class='ruby'><span class='ruby-value'>-1234567890987654321</span>.<span class='ruby-identifier'>abs</span>   <span class='ruby-comment'>#=&gt; 1234567890987654321</span>
+</pre>
+
+ <div class='method-heading'>
+            <span class='method-callseq'>bit_length &rarr; integer</span>
+            </div>
+            
+            <p>Returns the number of bits of the value of <em>int</em>.</p>
+
+<p>“the number of bits” means that the bit position of the highest bit which
+is different to the sign bit. (The bit position of the bit 2**n is n+1.) If
+there is no such bit (zero or minus one), zero is returned.</p>
+
+<p>I.e. This method returns ceil(log2(int &lt; 0 ? -int : int+1)).</p>
+
+<pre class='ruby'>(<span class='ruby-value'>-2</span><span class='ruby-operator'>**</span><span class='ruby-value'>10000</span><span class='ruby-operator'>-</span><span class='ruby-value'>1</span>).<span class='ruby-identifier'>bit_length</span>  <span class='ruby-comment'>#=&gt; 10001</span>
+(<span class='ruby-value'>-2</span><span class='ruby-operator'>**</span><span class='ruby-value'>10000</span>).<span class='ruby-identifier'>bit_length</span>    <span class='ruby-comment'>#=&gt; 10000</span>
+(<span class='ruby-value'>-2</span><span class='ruby-operator'>**</span><span class='ruby-value'>10000</span><span class='ruby-operator'>+</span><span class='ruby-value'>1</span>).<span class='ruby-identifier'>bit_length</span>  <span class='ruby-comment'>#=&gt; 10000</span>
+
+(<span class='ruby-value'>-2</span><span class='ruby-operator'>**</span><span class='ruby-value'>1000</span><span class='ruby-operator'>-</span><span class='ruby-value'>1</span>).<span class='ruby-identifier'>bit_length</span>   <span class='ruby-comment'>#=&gt; 1001</span>
+(<span class='ruby-value'>-2</span><span class='ruby-operator'>**</span><span class='ruby-value'>1000</span>).<span class='ruby-identifier'>bit_length</span>     <span class='ruby-comment'>#=&gt; 1000</span>
+(<span class='ruby-value'>-2</span><span class='ruby-operator'>**</span><span class='ruby-value'>1000</span><span class='ruby-operator'>+</span><span class='ruby-value'>1</span>).<span class='ruby-identifier'>bit_length</span>   <span class='ruby-comment'>#=&gt; 1000</span>
+
+(<span class='ruby-value'>2</span><span class='ruby-operator'>**</span><span class='ruby-value'>1000</span><span class='ruby-operator'>-</span><span class='ruby-value'>1</span>).<span class='ruby-identifier'>bit_length</span>    <span class='ruby-comment'>#=&gt; 1000</span>
+(<span class='ruby-value'>2</span><span class='ruby-operator'>**</span><span class='ruby-value'>1000</span>).<span class='ruby-identifier'>bit_length</span>      <span class='ruby-comment'>#=&gt; 1001</span>
+(<span class='ruby-value'>2</span><span class='ruby-operator'>**</span><span class='ruby-value'>1000</span><span class='ruby-operator'>+</span><span class='ruby-value'>1</span>).<span class='ruby-identifier'>bit_length</span>    <span class='ruby-comment'>#=&gt; 1001</span>
+
+(<span class='ruby-value'>2</span><span class='ruby-operator'>**</span><span class='ruby-value'>10000</span><span class='ruby-operator'>-</span><span class='ruby-value'>1</span>).<span class='ruby-identifier'>bit_length</span>   <span class='ruby-comment'>#=&gt; 10000</span>
+(<span class='ruby-value'>2</span><span class='ruby-operator'>**</span><span class='ruby-value'>10000</span>).<span class='ruby-identifier'>bit_length</span>     <span class='ruby-comment'>#=&gt; 10001</span>
+(<span class='ruby-value'>2</span><span class='ruby-operator'>**</span><span class='ruby-value'>10000</span><span class='ruby-operator'>+</span><span class='ruby-value'>1</span>).<span class='ruby-identifier'>bit_length</span>   <span class='ruby-comment'>#=&gt; 10001</span>
+</pre>
+
+<p>This method can be used to detect overflow in <a
+href='Array.html#method-i-pack'>Array#pack</a> as follows.</p>
+
+<pre class='ruby'><span class='ruby-keyword'>if</span> <span class='ruby-identifier'>n</span>.<span class='ruby-identifier'>bit_length</span> <span class='ruby-operator'>&lt;</span> <span class='ruby-value'>32</span>
+  [<span class='ruby-identifier'>n</span>].<span class='ruby-identifier'>pack</span>(<span class='ruby-string'>&quot;l&quot;</span>) <span class='ruby-comment'># no overflow</span>
+<span class='ruby-keyword'>else</span>
+  <span class='ruby-identifier'>raise</span> <span class='ruby-string'>&quot;overflow&quot;</span>
+<span class='ruby-keyword'>end</span>
+</pre>
+
+<div class='method-heading'>
+            <span class='method-callseq'>modulo(other)   &rarr; Numeric</span>
+            </div>
+            
+              <p>Returns big modulo other. See <a
+href='Numeric.html#method-i-divmod'>Numeric#divmod</a> for more
+information.</p>
+
+          <div class='method-heading'>
+            <span class='method-callseq'>odd? &rarr; true or false</span>
+            </div>
+            
+            <p>Returns <code>true</code> if <em>big</em> is an odd number.</p>
+            
+            <div class='method-heading'>
+            <span class='method-callseq'>remainder(numeric)    &rarr; number</span>
+            </div
+            
+            <p> Returns the remainder after dividing <em>big</em> by <em>numeric</em>.</p>
+
+<pre class='ruby'><span class='ruby-value'>-1234567890987654321</span>.<span class='ruby-identifier'>remainder</span>(<span class='ruby-value'>13731</span>)      <span class='ruby-comment'>#=&gt; -6966</span>
+<span class='ruby-value'>-1234567890987654321</span>.<span class='ruby-identifier'>remainder</span>(<span class='ruby-value'>13731.24</span>)   <span class='ruby-comment'>#=&gt; -9906.22531493148</span>
+</pre>
+
+<div class='method-heading'>
+            <span class='method-callseq'>coerce(numeric)  &rarr;  array</span>
+            </div>
+            
+                <p>Returns an array with both a <code>numeric</code> and a <code>big</code>
+represented as <a href='Bignum.html'>Bignum</a> objects.</p>
+
+<p>This is achieved by converting <code>numeric</code> to a <a
+href='Bignum.html'>Bignum</a>.</p>
+
+<p>A <a href='TypeError.html'>TypeError</a> is raised if the
+<code>numeric</code> is not a <a href='Fixnum.html'>Fixnum</a> or <a
+href='Bignum.html'>Bignum</a> type.</p>
+
+<pre class='ruby'>(<span class='ruby-value'>0x3FFFFFFFFFFFFFFF</span><span class='ruby-operator'>+</span><span class='ruby-value'>1</span>).<span class='ruby-identifier'>coerce</span>(<span class='ruby-value'>42</span>)   <span class='ruby-comment'>#=&gt; [42, 4611686018427387904]</span>
+</pre>
+
+
+          <div class='method-heading'>
+            <span class='method-callseq'>div(other)  &rarr; integer</span>
+            </div>
+            
+            
+            <p>Performs integer division: returns integer value.</p>
+            
+            <div class='method-heading'>
+            <span class='method-callseq'>divmod(numeric)   &rarr; array</span>
+            </div>
+            
+            <p>See <code>Numeric#divmod</code>.</p>
+            
+            <div class='method-heading'>
+            <span class='method-callseq'>eql?(obj)   &rarr; true or false</span>
+            </div>
+            
+              <p>Returns <code>true</code> only if <em>obj</em> is a <code>Bignum</code>
+with the same value as <em>big</em>. Contrast this with
+<code>Bignum#==</code>, which performs type conversions.</p>
+
+<pre class='ruby'><span class='ruby-value'>68719476736</span>.<span class='ruby-identifier'>eql?</span>(<span class='ruby-value'>68719476736.0</span>)   <span class='ruby-comment'>#=&gt; false</span>
+</pre>
+
+<div class='method-heading'>
+            <span class='method-callseq'>even? &rarr; true or false</span>
+            </div>
+
+ <p>Returns <code>true</code> if <em>big</em> is an even number.</p>
+ 
+  
+          <div class='method-heading'>
+            <span class='method-callseq'>fdiv(numeric) &rarr; float</span>
+            </div>
+            
+             <p>Returns the floating point result of dividing <em>big</em> by
+<em>numeric</em>.</p>
+
+<pre class='ruby'><span class='ruby-value'>-1234567890987654321</span>.<span class='ruby-identifier'>fdiv</span>(<span class='ruby-value'>13731</span>)      <span class='ruby-comment'>#=&gt; -89910996357705.5</span>
+<span class='ruby-value'>-1234567890987654321</span>.<span class='ruby-identifier'>fdiv</span>(<span class='ruby-value'>13731.24</span>)   <span class='ruby-comment'>#=&gt; -89909424858035.7</span>
+</pre>
+
+<div class='method-heading'>
+            <span class='method-callseq'>hash   &rarr; fixnum</span>
+            </div>
+            
+            <p>Compute a hash based on the value of <em>big</em>.</p>
+
+<p>See also <a href='Object.html#method-i-hash'>Object#hash</a>.</p>
+
+ <div class='method-heading'>
+            <span class='method-callseq'>magnitude &rarr; aBignum</span>
+            </div>
+            
+              <p>Returns the absolute value of <em>big</em>.</p>
+
+<pre class='ruby'><span class='ruby-value'>-1234567890987654321</span>.<span class='ruby-identifier'>abs</span>   <span class='ruby-comment'>#=&gt; 1234567890987654321</span>
+</pre>
+
+ <div class='method-heading'>
+            <span class='method-callseq'>modulo(other)   &rarr; Numeric</span>
+            </div>
+            
+             <p>Returns big modulo other. See <a
+href='Numeric.html#method-i-divmod'>Numeric#divmod</a> for more
+information.</p>
+            
+            <div class='method-heading'>
+            <span class='method-callseq'>odd? &rarr; true or false</span>
+            </div>
+            
+            <p>Returns <code>true</code> if <em>big</em> is an odd number.</p>
+            
+            <div class='method-heading'>
+            <span class='method-callseq'>remainder(numeric)    &rarr; number</span>
+            </div>
+            
+            p>Returns the remainder after dividing <em>big</em> by <em>numeric</em>.</p>
+
+<pre class='ruby'><span class='ruby-value'>-1234567890987654321</span>.<span class='ruby-identifier'>remainder</span>(<span class='ruby-value'>13731</span>)      <span class='ruby-comment'>#=&gt; -6966</span>
+<span class='ruby-value'>-1234567890987654321</span>.<span class='ruby-identifier'>remainder</span>(<span class='ruby-value'>13731.24</span>)   <span class='ruby-comment'>#=&gt; -9906.22531493148</span>
+</pre>
+
+ <div class='method-heading'>
+            <span class='method-callseq'>size &rarr; integer</span>
+            </div>
+            
+             <p> Returns the number of bytes in the machine representation of <em>big</em>.</p>
+
+<pre class='ruby'>(<span class='ruby-value'>256</span><span class='ruby-operator'>**</span><span class='ruby-value'>10</span> <span class='ruby-operator'>-</span> <span class='ruby-value'>1</span>).<span class='ruby-identifier'>size</span>   <span class='ruby-comment'>#=&gt; 12</span>
+(<span class='ruby-value'>256</span><span class='ruby-operator'>**</span><span class='ruby-value'>20</span> <span class='ruby-operator'>-</span> <span class='ruby-value'>1</span>).<span class='ruby-identifier'>size</span>   <span class='ruby-comment'>#=&gt; 20</span>
+(<span class='ruby-value'>256</span><span class='ruby-operator'>**</span><span class='ruby-value'>40</span> <span class='ruby-operator'>-</span> <span class='ruby-value'>1</span>).<span class='ruby-identifier'>size</span>   <span class='ruby-comment'>#=&gt; 40</span>
+</pre>
+
+<div class='method-heading'>
+            <span class='method-callseq'>to_f &rarr; float</span>
+            </div>
+            
+            <p>Converts <em>big</em> to a <code>Float</code>. If <em>big</em> doesn’t fit
+in a <code>Float</code>, the result is infinity.</p>
+
+<div class='method-heading'>
+            <span class='method-callseq'>to_s(base=10)   &rarr;  string</span>
+            </div>
+            
+            <p>Returns a string containing the representation of <em>big</em> radix
+<em>base</em> (2 through 36).</p>
+
+<pre class='ruby'><span class='ruby-value'>12345654321</span>.<span class='ruby-identifier'>to_s</span>         <span class='ruby-comment'>#=&gt; &quot;12345654321&quot;</span>
+<span class='ruby-value'>12345654321</span>.<span class='ruby-identifier'>to_s</span>(<span class='ruby-value'>2</span>)      <span class='ruby-comment'>#=&gt; &quot;1011011111110110111011110000110001&quot;</span>
+<span class='ruby-value'>12345654321</span>.<span class='ruby-identifier'>to_s</span>(<span class='ruby-value'>8</span>)      <span class='ruby-comment'>#=&gt; &quot;133766736061&quot;</span>
+<span class='ruby-value'>12345654321</span>.<span class='ruby-identifier'>to_s</span>(<span class='ruby-value'>16</span>)     <span class='ruby-comment'>#=&gt; &quot;2dfdbbc31&quot;</span>
+<span class='ruby-value'>78546939656932</span>.<span class='ruby-identifier'>to_s</span>(<span class='ruby-value'>36</span>)  <span class='ruby-comment'>#=&gt; &quot;rubyrules&quot;</span>
+</pre>
+
+ <div class='method-heading'>
+            <span class='method-callseq'>big | numeric   &rarr;  integer</span>
+            </div>
+            <p>Performs bitwise <code>or</code> between <em>big</em> and <em>numeric</em>.</p>
+            
+             <div class='method-heading'>
+            <span class='method-callseq'>~big  &rarr;  integer</span>
+            </div>
+            
+              
+            <p>Inverts the bits in big. As Bignums are conceptually infinite length, the
+result acts as if it had an infinite number of one bits to the left. In hex
+representations, this is displayed as two periods to the left of the
+digits.</p>
+
+<pre class='ruby'><span class='ruby-identifier'>sprintf</span>(<span class='ruby-string'>&quot;%X&quot;</span>, <span class='ruby-operator'>~</span><span class='ruby-value'>0x1122334455</span>)    <span class='ruby-comment'>#=&gt; &quot;..FEEDDCCBBAA&quot;</span>
+</pre>
+
+
+            
+            
+              </div><!-- description -->
+ ")
