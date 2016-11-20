@@ -1,3 +1,3 @@
 require 'fileutils'
 
-FileUtils.remove_entry_secure('db/blog.db')
+FileUtils.remove_entry_secure('db/ruby.db')
